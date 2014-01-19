@@ -71,6 +71,8 @@
     _layerBackedContainer.layer.sublayerTransform = sublayerTransform;
 
     // Setting anchor point
+    _layerBackedContainer.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
+    
     CGRect oldFrame;
     
     oldFrame = _oldRepresentationView.layer.frame;
