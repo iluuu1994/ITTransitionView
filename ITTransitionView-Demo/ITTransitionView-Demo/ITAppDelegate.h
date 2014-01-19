@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ITTransitionView.h"
 
-@interface ITAppDelegate : NSObject <NSApplicationDelegate>
+@interface ITAppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet ITTransitionView *transitionView;

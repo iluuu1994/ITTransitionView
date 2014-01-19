@@ -35,4 +35,19 @@
                            withTransition:transition];
 }
 
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return 1000;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView
+   viewForTableColumn:(NSTableColumn *)tableColumn
+                  row:(NSInteger)row
+{
+    NSTableCellView *cell = [tableView makeViewWithIdentifier:@"default" owner:self];
+    cell.textField.stringValue = [NSString stringWithFormat:@"Test %ld", row];
+    
+    return cell;
+}
+
 @end
