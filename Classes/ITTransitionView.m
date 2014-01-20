@@ -170,8 +170,8 @@
 - (void)_reloadAnchorPoints {
     // Setting anchor point
     CGRect frame = (CGRect){
-        .origin.x = 0,
-        .origin.y = 0,
+        .origin.x = self.bounds.size.width * self.layer.anchorPoint.x,
+        .origin.y = self.bounds.size.height * self.layer.anchorPoint.y,
         .size = self.bounds.size
     };
     

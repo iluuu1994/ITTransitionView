@@ -23,8 +23,36 @@
 }
 
 - (IBAction)animateToNext:(id)sender {
-    ITTransition *transition = [ITSlideTransition new];
+    ITTransition *transition;
+    
+    switch ([sender tag]) {
+        case 0:
+            transition = [ITSwapTransition new];
+            break;
+        case 1:
+            transition = [ITFlipTransition new];
+            break;
+        case 2:
+            transition = [ITFadeTransition new];
+            break;
+        case 3:
+            transition = [ITCarrouselTransition new];
+            break;
+        case 4:
+            transition = [ITCubeTransition new];
+            break;
+        case 5:
+            transition = [ITGhostTransition new];
+            break;
+        case 6:
+            transition = [ITSlideTransition new];
+            break;
+        default:
+            break;
+    }
+    
     transition.duration = 1.f;
+    if ([NSApplication sharedApplication].currentEvent.modifierFlags & NSShiftKeyMask) transition.duration *= 5.f;
     
     [self transition:transition];
 }
