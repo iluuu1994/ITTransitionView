@@ -114,9 +114,9 @@
                      toView:(NSView *)viewIn
              withTransition:(ITTransition *)transition
 {
-    if (_lock) return;
+    if (_lock || viewOut != viewIn) return;
     
-    if (transition && viewOut && viewOut != viewIn)
+    if (transition && viewOut)
     {
         // Lock
         _lock = YES;
