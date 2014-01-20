@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		91173AD1188D0C330012AD9A /* ITCubeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91173AD0188D0C330012AD9A /* ITCubeTransition.m */; };
+		91173AD4188D27230012AD9A /* ITGhostTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91173AD3188D27230012AD9A /* ITGhostTransition.m */; };
+		91173AD7188D27AA0012AD9A /* ITSlideTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91173AD6188D27AA0012AD9A /* ITSlideTransition.m */; };
 		91CF2B43188C2758007510D5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CF2B42188C2758007510D5 /* Cocoa.framework */; };
 		91CF2B4D188C2758007510D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91CF2B4B188C2758007510D5 /* InfoPlist.strings */; };
 		91CF2B4F188C2758007510D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CF2B4E188C2758007510D5 /* main.m */; };
@@ -46,6 +48,10 @@
 /* Begin PBXFileReference section */
 		91173ACF188D0C330012AD9A /* ITCubeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITCubeTransition.h; path = ../../Classes/Optional/ITCubeTransition.h; sourceTree = "<group>"; };
 		91173AD0188D0C330012AD9A /* ITCubeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITCubeTransition.m; path = ../../Classes/Optional/ITCubeTransition.m; sourceTree = "<group>"; };
+		91173AD2188D27230012AD9A /* ITGhostTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITGhostTransition.h; path = ../../Classes/Optional/ITGhostTransition.h; sourceTree = "<group>"; };
+		91173AD3188D27230012AD9A /* ITGhostTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITGhostTransition.m; path = ../../Classes/Optional/ITGhostTransition.m; sourceTree = "<group>"; };
+		91173AD5188D27AA0012AD9A /* ITSlideTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITSlideTransition.h; path = ../../Classes/Optional/ITSlideTransition.h; sourceTree = "<group>"; };
+		91173AD6188D27AA0012AD9A /* ITSlideTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITSlideTransition.m; path = ../../Classes/Optional/ITSlideTransition.m; sourceTree = "<group>"; };
 		91CF2B3F188C2758007510D5 /* ITTransitionView-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ITTransitionView-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CF2B42188C2758007510D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		91CF2B45188C2758007510D5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -224,6 +230,10 @@
 				91CF2B9D188C6C04007510D5 /* ITCarrouselTransition.m */,
 				91173ACF188D0C330012AD9A /* ITCubeTransition.h */,
 				91173AD0188D0C330012AD9A /* ITCubeTransition.m */,
+				91173AD2188D27230012AD9A /* ITGhostTransition.h */,
+				91173AD3188D27230012AD9A /* ITGhostTransition.m */,
+				91173AD5188D27AA0012AD9A /* ITSlideTransition.h */,
+				91173AD6188D27AA0012AD9A /* ITSlideTransition.m */,
 			);
 			name = Optional;
 			sourceTree = "<group>";
@@ -333,11 +343,13 @@
 				91CF2B98188C5EC2007510D5 /* ITFlipTransition.m in Sources */,
 				91CF2B4F188C2758007510D5 /* main.m in Sources */,
 				91CF2B8A188C3AA7007510D5 /* ITDualTransition.m in Sources */,
+				91173AD4188D27230012AD9A /* ITGhostTransition.m in Sources */,
 				91CF2B7F188C27BC007510D5 /* ITTransition.m in Sources */,
 				91CF2B9B188C6A17007510D5 /* ITFadeTransition.m in Sources */,
 				91CF2B95188C4958007510D5 /* ITSwapTransition.m in Sources */,
 				91CF2B87188C3802007510D5 /* ITTransformTransition.m in Sources */,
 				91173AD1188D0C330012AD9A /* ITCubeTransition.m in Sources */,
+				91173AD7188D27AA0012AD9A /* ITSlideTransition.m in Sources */,
 				91CF2B56188C2758007510D5 /* ITAppDelegate.m in Sources */,
 				91CF2B9E188C6C04007510D5 /* ITCarrouselTransition.m in Sources */,
 				91CF2B79188C2775007510D5 /* ITTransitionView.m in Sources */,

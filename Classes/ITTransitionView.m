@@ -11,7 +11,6 @@
 
 #pragma mark - Private
 @interface ITTransitionView () {
-    BOOL _lock;
     NSView *_layerBackedContainer;
     NSView *_containerView;
     NSView *_oldRepresentationView;

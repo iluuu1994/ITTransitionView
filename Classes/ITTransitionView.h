@@ -27,6 +27,12 @@
 
 
 /**
+ *  @property lock - True if the view is currently animating.
+ */
+@property (readonly) BOOL lock;
+
+
+/**
  *  Used to replace the content view with another view.
  *
  *  @param view       - The view to replace the current content view with.
