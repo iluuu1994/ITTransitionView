@@ -9,6 +9,9 @@
 #import "ITAppDelegate.h"
 #import "ITSwapTransition.h"
 #import "ITFlipTransition.h"
+#import "ITFadeTransition.h"
+#import "ITCarrouselTransition.h"
+#import "ITCubeTransition.h"
 
 @implementation ITAppDelegate
 
@@ -18,7 +21,7 @@
 }
 
 - (IBAction)animateToNext:(id)sender {
-    ITTransition *transition = [ITFlipTransition new];
+    ITTransition *transition = [ITCarrouselTransition new];
     transition.duration = 1.f;
     
     [self transition:transition];

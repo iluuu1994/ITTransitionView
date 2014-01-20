@@ -7,9 +7,22 @@
 //
 
 #import "ITTransformTransition.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ITTransformTransition
 
+#pragma mark - Init
+- (id)init {
+    if (self = [super init]) {
+        _inTransform = CATransform3DIdentity;
+        _outTransform = CATransform3DIdentity;
+    }
+    
+    return self;
+}
+
+
+#pragma mark - Transition
 - (void)transitionContainerView:(NSView *)containerView
           oldRepresentationView:(NSView *)oldRepresentationView
           newRepresentationView:(NSView *)newRepresentationView

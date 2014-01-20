@@ -7,6 +7,7 @@
 //
 
 #import "ITDualTransition.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ITDualTransition
 
@@ -16,6 +17,19 @@
 {
     [oldRepresentationView.layer addAnimation:self.outAnimation forKey:nil];
     [newRepresentationView.layer addAnimation:self.inAnimation forKey:nil];
+}
+
+#pragma mark - CAAnimationDelegate
+- (void)animationDidStop:(CAAnimation *)animation
+                finished:(BOOL)flag
+{
+    if (self.inAnimation.delegate == self) {
+        self.inAnimation.delegate = nil;
+    }
+    
+    if (self.outAnimation.delegate == self) {
+        self.outAnimation.delegate = nil;
+    }
 }
 
 @end

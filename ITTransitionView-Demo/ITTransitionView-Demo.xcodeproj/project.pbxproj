@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91173AD1188D0C330012AD9A /* ITCubeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91173AD0188D0C330012AD9A /* ITCubeTransition.m */; };
 		91CF2B43188C2758007510D5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CF2B42188C2758007510D5 /* Cocoa.framework */; };
 		91CF2B4D188C2758007510D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91CF2B4B188C2758007510D5 /* InfoPlist.strings */; };
 		91CF2B4F188C2758007510D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CF2B4E188C2758007510D5 /* main.m */; };
@@ -28,6 +29,8 @@
 		91CF2B92188C469B007510D5 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91CF2B8F188C469B007510D5 /* test.jpg */; };
 		91CF2B95188C4958007510D5 /* ITSwapTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CF2B94188C4958007510D5 /* ITSwapTransition.m */; };
 		91CF2B98188C5EC2007510D5 /* ITFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CF2B97188C5EC2007510D5 /* ITFlipTransition.m */; };
+		91CF2B9B188C6A17007510D5 /* ITFadeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CF2B9A188C6A17007510D5 /* ITFadeTransition.m */; };
+		91CF2B9E188C6C04007510D5 /* ITCarrouselTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CF2B9D188C6C04007510D5 /* ITCarrouselTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91173ACF188D0C330012AD9A /* ITCubeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITCubeTransition.h; path = ../../Classes/Optional/ITCubeTransition.h; sourceTree = "<group>"; };
+		91173AD0188D0C330012AD9A /* ITCubeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITCubeTransition.m; path = ../../Classes/Optional/ITCubeTransition.m; sourceTree = "<group>"; };
 		91CF2B3F188C2758007510D5 /* ITTransitionView-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ITTransitionView-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CF2B42188C2758007510D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		91CF2B45188C2758007510D5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -76,6 +81,10 @@
 		91CF2B94188C4958007510D5 /* ITSwapTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITSwapTransition.m; path = ../../Classes/Optional/ITSwapTransition.m; sourceTree = "<group>"; };
 		91CF2B96188C5EC2007510D5 /* ITFlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITFlipTransition.h; path = ../../Classes/Optional/ITFlipTransition.h; sourceTree = "<group>"; };
 		91CF2B97188C5EC2007510D5 /* ITFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITFlipTransition.m; path = ../../Classes/Optional/ITFlipTransition.m; sourceTree = "<group>"; };
+		91CF2B99188C6A17007510D5 /* ITFadeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITFadeTransition.h; path = ../../Classes/Optional/ITFadeTransition.h; sourceTree = "<group>"; };
+		91CF2B9A188C6A17007510D5 /* ITFadeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITFadeTransition.m; path = ../../Classes/Optional/ITFadeTransition.m; sourceTree = "<group>"; };
+		91CF2B9C188C6C04007510D5 /* ITCarrouselTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITCarrouselTransition.h; path = ../../Classes/Optional/ITCarrouselTransition.h; sourceTree = "<group>"; };
+		91CF2B9D188C6C04007510D5 /* ITCarrouselTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITCarrouselTransition.m; path = ../../Classes/Optional/ITCarrouselTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +218,12 @@
 				91CF2B94188C4958007510D5 /* ITSwapTransition.m */,
 				91CF2B96188C5EC2007510D5 /* ITFlipTransition.h */,
 				91CF2B97188C5EC2007510D5 /* ITFlipTransition.m */,
+				91CF2B99188C6A17007510D5 /* ITFadeTransition.h */,
+				91CF2B9A188C6A17007510D5 /* ITFadeTransition.m */,
+				91CF2B9C188C6C04007510D5 /* ITCarrouselTransition.h */,
+				91CF2B9D188C6C04007510D5 /* ITCarrouselTransition.m */,
+				91173ACF188D0C330012AD9A /* ITCubeTransition.h */,
+				91173AD0188D0C330012AD9A /* ITCubeTransition.m */,
 			);
 			name = Optional;
 			sourceTree = "<group>";
@@ -319,9 +334,12 @@
 				91CF2B4F188C2758007510D5 /* main.m in Sources */,
 				91CF2B8A188C3AA7007510D5 /* ITDualTransition.m in Sources */,
 				91CF2B7F188C27BC007510D5 /* ITTransition.m in Sources */,
+				91CF2B9B188C6A17007510D5 /* ITFadeTransition.m in Sources */,
 				91CF2B95188C4958007510D5 /* ITSwapTransition.m in Sources */,
 				91CF2B87188C3802007510D5 /* ITTransformTransition.m in Sources */,
+				91173AD1188D0C330012AD9A /* ITCubeTransition.m in Sources */,
 				91CF2B56188C2758007510D5 /* ITAppDelegate.m in Sources */,
+				91CF2B9E188C6C04007510D5 /* ITCarrouselTransition.m in Sources */,
 				91CF2B79188C2775007510D5 /* ITTransitionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

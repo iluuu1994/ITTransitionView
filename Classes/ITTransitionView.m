@@ -13,8 +13,29 @@
 @interface ITTransitionView () {
     BOOL _lock;
     NSView *_layerBackedContainer;
+    NSView *_containerView;
     NSView *_oldRepresentationView;
     NSView *_newRepresentationView;
+}
+@end
+
+
+@implementation CATransformLayer (MyExtension)
+// Avoid warning at start "changing property ... in transform-only layer, will have no effect"
+-(void)setOpaque:(BOOL)opaque { return; }
+- (void)setEdgeAntialiasingMask:(unsigned int)edgeAntialiasingMask { return; }
+- (void)setShadowColor:(CGColorRef)shadowColor { return; }
+- (void)setMasksToBounds:(BOOL)masksToBounds { return; }
+- (void)setFilters:(NSArray *)filters { return; }
+- (void)setBackgroundFilters:(NSArray *)backgroundFilters { return; }
+@end
+
+@interface IT3DView : NSView
+@end
+
+@implementation IT3DView
+- (CALayer *)makeBackingLayer {
+    return [CATransformLayer layer];
 }
 @end
 
@@ -45,20 +66,24 @@
 - (void)_commonInit {
     // Init the layers
     _layerBackedContainer = [[NSView alloc] initWithFrame:self.bounds];
+    _containerView = [[IT3DView alloc] initWithFrame:self.bounds];
     _oldRepresentationView = [[NSView alloc] initWithFrame:self.bounds];
     _newRepresentationView = [[NSView alloc] initWithFrame:self.bounds];
     
     // Set the autoresizing masks
     _layerBackedContainer.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    _containerView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     _oldRepresentationView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     _newRepresentationView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     
     // Make layer backed
     _layerBackedContainer.wantsLayer = YES;
+    _layerBackedContainer.autoresizesSubviews = YES;
     
     // Make view hierarchy
-    [_layerBackedContainer addSubview:_oldRepresentationView];
-    [_layerBackedContainer addSubview:_newRepresentationView];
+    [_layerBackedContainer addSubview:_containerView];
+    [_containerView addSubview:_oldRepresentationView];
+    [_containerView addSubview:_newRepresentationView];
     [self addSubview:_layerBackedContainer];
     
     // 3d setup
@@ -70,24 +95,11 @@
     sublayerTransform.m34 = 1.0 / -zDistance;
     _layerBackedContainer.layer.sublayerTransform = sublayerTransform;
 
-    // Setting anchor point
-    _layerBackedContainer.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
-    
-    CGRect oldFrame;
-    
-    oldFrame = _oldRepresentationView.layer.frame;
-    _oldRepresentationView.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
-    _oldRepresentationView.layer.frame = oldFrame;
-    
-    oldFrame = _newRepresentationView.layer.frame;
-    _newRepresentationView.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
-    _newRepresentationView.layer.frame = oldFrame;
-    
-    
+    [self _reloadAnchorPoints];
+
     // Finally, we hide the container
     [_layerBackedContainer setHidden:YES];
 }
-
 
 
 #pragma mark - Transition
@@ -118,9 +130,9 @@
         
         _oldRepresentationView.layer.contents = [self _cacheContentsOfView:viewOut];
         _newRepresentationView.layer.contents = [self _cacheContentsOfView:viewIn];
+        
         [self _prepareForTransition];
         [viewOut removeFromSuperview];
-
         
         // Start the animation
         [CATransaction begin];
@@ -129,14 +141,14 @@
             CATransaction.completionBlock = ^{
                 [self _addAutoresizingSubview:viewIn];
                 [self display];
-                
                 [self _cleanupAfterTransition];
+                
                 _lock = NO;
             };
             
             [transition prepareForUsage];
             
-            [transition transitionContainerView:_layerBackedContainer
+            [transition transitionContainerView:_containerView
                           oldRepresentationView:_oldRepresentationView
                           newRepresentationView:_newRepresentationView];
         }
@@ -156,14 +168,43 @@
 
 
 #pragma mark - Helpers
+- (void)_reloadAnchorPoints {
+    // Setting anchor point
+    CGRect frame = (CGRect){
+        .origin.x = 0,
+        .origin.y = 0,
+        .size = self.bounds.size
+    };
+    
+    _layerBackedContainer.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
+    _layerBackedContainer.layer.frame = frame;
+    
+    _containerView.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
+    _containerView.layer.frame = frame;
+    
+    _oldRepresentationView.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
+    _oldRepresentationView.layer.frame = frame;
+    
+    _newRepresentationView.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
+    _newRepresentationView.layer.frame = frame;
+}
+
 - (void)_prepareForTransition {
     [_layerBackedContainer setHidden:NO];
+    
+    [self _reloadAnchorPoints];
+    
+    _containerView.layer.transform = CATransform3DIdentity;
+    _newRepresentationView.layer.transform = CATransform3DIdentity;
+    _oldRepresentationView.layer.transform = CATransform3DIdentity;
 }
 
 - (void)_cleanupAfterTransition {
     [_layerBackedContainer setHidden:YES];
     _oldRepresentationView.layer.contents = nil;
     _newRepresentationView.layer.contents = nil;
+    
+    _containerView.layer.sublayerTransform = CATransform3DIdentity;
 }
 
 - (NSImage *)_cacheContentsOfView:(NSView *)view {

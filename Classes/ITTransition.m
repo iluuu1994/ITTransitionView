@@ -32,12 +32,4 @@
     return @[firstQuarterCircleApproximationFuction, secondQuarterCircleApproximationFuction];
 }
 
-
-#pragma mark - CAAnimationDelegate
-- (void)animationDidStop:(CAAnimation *)animation
-                finished:(BOOL)flag
-{
-    if (animation.delegate == self) animation.delegate = nil;
-}
-
 @end
