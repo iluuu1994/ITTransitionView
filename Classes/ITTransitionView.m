@@ -116,6 +116,8 @@
 {
     if (_lock || viewOut == viewIn) return;
     
+    _contentView = viewIn;
+    
     if (transition && viewOut)
     {
         // Lock
@@ -124,8 +126,6 @@
         // Prepare transition/views/layers
         transition.sourceRect = self.frame;
         viewIn.frame = self.bounds;
-        [viewIn layoutSubtreeIfNeeded];
-        [viewIn displayIfNeeded];
         
         _oldRepresentationView.layer.contents = [self _cacheContentsOfView:viewOut];
         _newRepresentationView.layer.contents = [self _cacheContentsOfView:viewIn];
@@ -138,11 +138,13 @@
         {
             // Hide the container
             CATransaction.completionBlock = ^{
-                [self _addAutoresizingSubview:viewIn];
-                [self display];
-                [self _cleanupAfterTransition];
-                
-                _lock = NO;
+                if (viewIn == _contentView) {
+                    [self _addAutoresizingSubview:viewIn];
+                    [self display];
+                    [self _cleanupAfterTransition];
+                    
+                    _lock = NO;
+                }
             };
             
             [transition prepareForUsage];
@@ -161,8 +163,6 @@
         [self _addAutoresizingSubview:viewIn];
         [viewOut removeFromSuperview];
     }
-    
-    _contentView = viewIn;
 }
 
 
@@ -208,8 +208,9 @@
 
 - (NSImage *)_cacheContentsOfView:(NSView *)view {
     [view layoutSubtreeIfNeeded];
-    [view setNeedsUpdateConstraints:YES];
+    [view updateConstraints];
     [view updateConstraintsForSubtreeIfNeeded];
+    [view displayIfNeeded];
     
     NSBitmapImageRep* rep = [view bitmapImageRepForCachingDisplayInRect:view.bounds];
     [view cacheDisplayInRect:view.bounds toBitmapImageRep:rep];
@@ -218,8 +219,8 @@
 }
 
 - (void)_addAutoresizingSubview:(NSView *)aView {
-    aView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     aView.frame = self.bounds;
+    aView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     
     [self addSubview:aView];
 }
