@@ -8,9 +8,21 @@
 
 #import "ITTransition.h"
 
+/**
+ *  @class ITDualTransition
+ *
+ *  ITDualTransition is used to transition from one NSView to another using two separate CAAnimation instances
+ */
 @interface ITDualTransition : ITTransition
 
-@property (strong) CAAnimation *outAnimation;
+/**
+ *  @property inAnimation - The animation applied to the view that is transitioned in
+ */
 @property (strong) CAAnimation *inAnimation;
+
+/**
+ *  @property outAnimation - The animation applied to the view that is transitioned out
+ */
+@property (strong) CAAnimation *outAnimation;
 
 @end

@@ -13,6 +13,8 @@
 #import "ITDualTransition.h"
 
 /**
+ *  @class ITTransitionView
+ *
  *  ITTransitionView is a view that can replace it's content view with customizable transition animations.
  *  Core Animation is used on the fly, but the views don't actually have to be layer-backed.
  */

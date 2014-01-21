@@ -14,7 +14,7 @@
 
 
 /**
- *  Used to describe the direction of the transition
+ *  @enum ITTransitionOrientation - Used to describe the direction of the transition
  */
 typedef NS_ENUM(NSUInteger, ITTransitionOrientation) {
     ITTransitionOrientationRightToLeft,
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, ITTransitionOrientation) {
 
 
 /**
- *  The transition delegate protocol
+ *  @protocol- The transition delegate protocol
  */
 @protocol ITTransitionDelegate <NSObject>
 
@@ -40,6 +40,8 @@ typedef NS_ENUM(NSUInteger, ITTransitionOrientation) {
 
 
 /**
+ *  @class ITTransition
+ *
  *  A transition is the animation that occurs when a view is replaced with a different one.
  *  ITTransition is used to describe that animation.
  *  Eventually, ITTransitions can be passed to the ITTransitionView.
@@ -47,23 +49,25 @@ typedef NS_ENUM(NSUInteger, ITTransitionOrientation) {
 @interface ITTransition : NSObject
 
 /**
+ *  @property delegate
+ *
  *  The delegate of the transition.
  *  Look at the `ITTransitionDelegate` protocol to see what method calls the delegate will receive.
  */
 @property (weak) id <ITTransitionDelegate> delegate;
 
 /**
- *  The orientation of the transition
+ *  @property orientation - The orientation of the transition
  */
 @property (nonatomic, assign) ITTransitionOrientation orientation;
 
 /**
- *  The rect of the transition view
+ *  @property transitionViewBounds - The bounds of the transition view
  */
 @property (nonatomic, assign) NSRect transitionViewBounds;
 
 /**
- *  The duration of the transition
+ *  @property duration - The duration of the transition
  */
 @property (nonatomic) NSTimeInterval duration;
 
@@ -85,6 +89,11 @@ typedef NS_ENUM(NSUInteger, ITTransitionOrientation) {
  */
 - (void)prepareForUsage;
 
+/**
+ *  Returns some timing functions used for animating
+ *
+ *  @return NSArray - An array of timing functions
+ */
 - (NSArray *)getCircleApproximationTimingFunctions;
 
 @end
