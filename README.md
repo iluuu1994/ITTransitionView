@@ -22,6 +22,13 @@ Mixing Core Animation with AppKit can cause issues, which is why the content of 
 This enables you to keep your views non-layer-backed, but animatable.
 
 
+What's left?
+------------
+
+There's some unimplemented stuff, like delegates.
+I'm planning on implementing this soon.
+
+
 How to use?
 -----------
 
