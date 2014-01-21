@@ -12,8 +12,8 @@
 @implementation ITFlipTransition
 
 - (void)prepareForUsage {
-    CGFloat viewWidth = self.sourceRect.size.width;
-    CGFloat viewHeight = self.sourceRect.size.height;
+    CGFloat viewWidth = self.transitionViewBounds.size.width;
+    CGFloat viewHeight = self.transitionViewBounds.size.height;
     
     CAKeyframeAnimation * zTranslationAnimation = [CAKeyframeAnimation animationWithKeyPath:@"zPosition"];
     

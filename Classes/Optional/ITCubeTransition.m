@@ -13,8 +13,8 @@
 
 - (void)prepareForUsage {
     CAAnimation * animation = nil;
-    CGFloat viewWidth = self.sourceRect.size.width;
-    CGFloat viewHeight = self.sourceRect.size.height;
+    CGFloat viewWidth = self.transitionViewBounds.size.width;
+    CGFloat viewHeight = self.transitionViewBounds.size.height;
     CABasicAnimation * cubeRotation = [CABasicAnimation animationWithKeyPath:@"transform"];
     CATransform3D rotation = CATransform3DIdentity;
     if (self.orientation == ITTransitionOrientationRightToLeft) {        

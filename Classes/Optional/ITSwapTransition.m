@@ -21,8 +21,8 @@
 
 - (void)prepareForUsage
 {
-    CGFloat viewWidth = self.sourceRect.size.width;
-    CGFloat viewHeight = self.sourceRect.size.height;
+    CGFloat viewWidth = self.transitionViewBounds.size.width;
+    CGFloat viewHeight = self.transitionViewBounds.size.height;
     
     CABasicAnimation * inZPosition = [CABasicAnimation animationWithKeyPath:@"zPosition"];
     inZPosition.fromValue = @( -self.depth );

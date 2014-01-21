@@ -10,6 +10,16 @@
 		91173AD1188D0C330012AD9A /* ITCubeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91173AD0188D0C330012AD9A /* ITCubeTransition.m */; };
 		91173AD4188D27230012AD9A /* ITGhostTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91173AD3188D27230012AD9A /* ITGhostTransition.m */; };
 		91173AD7188D27AA0012AD9A /* ITSlideTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 91173AD6188D27AA0012AD9A /* ITSlideTransition.m */; };
+		918B990F188EAA0700952CC1 /* ITBackFadeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B990E188EAA0700952CC1 /* ITBackFadeTransition.m */; };
+		918B9912188EAA5E00952CC1 /* ITFoldTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B9911188EAA5E00952CC1 /* ITFoldTransition.m */; };
+		918B9915188EAA7900952CC1 /* ITCrossTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B9914188EAA7900952CC1 /* ITCrossTransition.m */; };
+		918B9918188EAA9E00952CC1 /* ITGlueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B9917188EAA9E00952CC1 /* ITGlueTransition.m */; };
+		918B991B188EAAB000952CC1 /* ITModernPushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B991A188EAAB000952CC1 /* ITModernPushTransition.m */; };
+		918B991E188EAAC000952CC1 /* ITPushRotateTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B991D188EAABF00952CC1 /* ITPushRotateTransition.m */; };
+		918B9921188EAAF000952CC1 /* ITScaleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B9920188EAAF000952CC1 /* ITScaleTransition.m */; };
+		918B9924188EAB0F00952CC1 /* ITSwipeFadeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B9923188EAB0F00952CC1 /* ITSwipeFadeTransition.m */; };
+		918B9927188EAB2A00952CC1 /* ITSwipeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B9926188EAB2A00952CC1 /* ITSwipeTransition.m */; };
+		918B992A188EAB4500952CC1 /* ITZoomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 918B9929188EAB4500952CC1 /* ITZoomTransition.m */; };
 		91CF2B43188C2758007510D5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CF2B42188C2758007510D5 /* Cocoa.framework */; };
 		91CF2B4D188C2758007510D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91CF2B4B188C2758007510D5 /* InfoPlist.strings */; };
 		91CF2B4F188C2758007510D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CF2B4E188C2758007510D5 /* main.m */; };
@@ -52,6 +62,26 @@
 		91173AD3188D27230012AD9A /* ITGhostTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITGhostTransition.m; path = ../../Classes/Optional/ITGhostTransition.m; sourceTree = "<group>"; };
 		91173AD5188D27AA0012AD9A /* ITSlideTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITSlideTransition.h; path = ../../Classes/Optional/ITSlideTransition.h; sourceTree = "<group>"; };
 		91173AD6188D27AA0012AD9A /* ITSlideTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITSlideTransition.m; path = ../../Classes/Optional/ITSlideTransition.m; sourceTree = "<group>"; };
+		918B990D188EAA0700952CC1 /* ITBackFadeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITBackFadeTransition.h; path = ../../Classes/Optional/ITBackFadeTransition.h; sourceTree = "<group>"; };
+		918B990E188EAA0700952CC1 /* ITBackFadeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITBackFadeTransition.m; path = ../../Classes/Optional/ITBackFadeTransition.m; sourceTree = "<group>"; };
+		918B9910188EAA5E00952CC1 /* ITFoldTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITFoldTransition.h; path = ../../Classes/Optional/ITFoldTransition.h; sourceTree = "<group>"; };
+		918B9911188EAA5E00952CC1 /* ITFoldTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITFoldTransition.m; path = ../../Classes/Optional/ITFoldTransition.m; sourceTree = "<group>"; };
+		918B9913188EAA7900952CC1 /* ITCrossTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITCrossTransition.h; path = ../../Classes/Optional/ITCrossTransition.h; sourceTree = "<group>"; };
+		918B9914188EAA7900952CC1 /* ITCrossTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITCrossTransition.m; path = ../../Classes/Optional/ITCrossTransition.m; sourceTree = "<group>"; };
+		918B9916188EAA9E00952CC1 /* ITGlueTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITGlueTransition.h; path = ../../Classes/Optional/ITGlueTransition.h; sourceTree = "<group>"; };
+		918B9917188EAA9E00952CC1 /* ITGlueTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITGlueTransition.m; path = ../../Classes/Optional/ITGlueTransition.m; sourceTree = "<group>"; };
+		918B9919188EAAB000952CC1 /* ITModernPushTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITModernPushTransition.h; path = ../../Classes/Optional/ITModernPushTransition.h; sourceTree = "<group>"; };
+		918B991A188EAAB000952CC1 /* ITModernPushTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITModernPushTransition.m; path = ../../Classes/Optional/ITModernPushTransition.m; sourceTree = "<group>"; };
+		918B991C188EAABF00952CC1 /* ITPushRotateTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITPushRotateTransition.h; path = ../../Classes/Optional/ITPushRotateTransition.h; sourceTree = "<group>"; };
+		918B991D188EAABF00952CC1 /* ITPushRotateTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITPushRotateTransition.m; path = ../../Classes/Optional/ITPushRotateTransition.m; sourceTree = "<group>"; };
+		918B991F188EAAF000952CC1 /* ITScaleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITScaleTransition.h; path = ../../Classes/Optional/ITScaleTransition.h; sourceTree = "<group>"; };
+		918B9920188EAAF000952CC1 /* ITScaleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITScaleTransition.m; path = ../../Classes/Optional/ITScaleTransition.m; sourceTree = "<group>"; };
+		918B9922188EAB0F00952CC1 /* ITSwipeFadeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITSwipeFadeTransition.h; path = ../../Classes/Optional/ITSwipeFadeTransition.h; sourceTree = "<group>"; };
+		918B9923188EAB0F00952CC1 /* ITSwipeFadeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITSwipeFadeTransition.m; path = ../../Classes/Optional/ITSwipeFadeTransition.m; sourceTree = "<group>"; };
+		918B9925188EAB2A00952CC1 /* ITSwipeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITSwipeTransition.h; path = ../../Classes/Optional/ITSwipeTransition.h; sourceTree = "<group>"; };
+		918B9926188EAB2A00952CC1 /* ITSwipeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITSwipeTransition.m; path = ../../Classes/Optional/ITSwipeTransition.m; sourceTree = "<group>"; };
+		918B9928188EAB4500952CC1 /* ITZoomTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITZoomTransition.h; path = ../../Classes/Optional/ITZoomTransition.h; sourceTree = "<group>"; };
+		918B9929188EAB4500952CC1 /* ITZoomTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITZoomTransition.m; path = ../../Classes/Optional/ITZoomTransition.m; sourceTree = "<group>"; };
 		91CF2B3F188C2758007510D5 /* ITTransitionView-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ITTransitionView-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CF2B42188C2758007510D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		91CF2B45188C2758007510D5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -220,20 +250,40 @@
 		91CF2B8C188C431C007510D5 /* Optional */ = {
 			isa = PBXGroup;
 			children = (
-				91CF2B93188C4958007510D5 /* ITSwapTransition.h */,
-				91CF2B94188C4958007510D5 /* ITSwapTransition.m */,
-				91CF2B96188C5EC2007510D5 /* ITFlipTransition.h */,
-				91CF2B97188C5EC2007510D5 /* ITFlipTransition.m */,
-				91CF2B99188C6A17007510D5 /* ITFadeTransition.h */,
-				91CF2B9A188C6A17007510D5 /* ITFadeTransition.m */,
+				918B990D188EAA0700952CC1 /* ITBackFadeTransition.h */,
+				918B990E188EAA0700952CC1 /* ITBackFadeTransition.m */,
 				91CF2B9C188C6C04007510D5 /* ITCarrouselTransition.h */,
 				91CF2B9D188C6C04007510D5 /* ITCarrouselTransition.m */,
+				918B9913188EAA7900952CC1 /* ITCrossTransition.h */,
+				918B9914188EAA7900952CC1 /* ITCrossTransition.m */,
 				91173ACF188D0C330012AD9A /* ITCubeTransition.h */,
 				91173AD0188D0C330012AD9A /* ITCubeTransition.m */,
+				91CF2B99188C6A17007510D5 /* ITFadeTransition.h */,
+				91CF2B9A188C6A17007510D5 /* ITFadeTransition.m */,
+				91CF2B96188C5EC2007510D5 /* ITFlipTransition.h */,
+				91CF2B97188C5EC2007510D5 /* ITFlipTransition.m */,
+				918B9910188EAA5E00952CC1 /* ITFoldTransition.h */,
+				918B9911188EAA5E00952CC1 /* ITFoldTransition.m */,
 				91173AD2188D27230012AD9A /* ITGhostTransition.h */,
 				91173AD3188D27230012AD9A /* ITGhostTransition.m */,
+				918B9916188EAA9E00952CC1 /* ITGlueTransition.h */,
+				918B9917188EAA9E00952CC1 /* ITGlueTransition.m */,
+				918B9919188EAAB000952CC1 /* ITModernPushTransition.h */,
+				918B991A188EAAB000952CC1 /* ITModernPushTransition.m */,
+				918B991C188EAABF00952CC1 /* ITPushRotateTransition.h */,
+				918B991D188EAABF00952CC1 /* ITPushRotateTransition.m */,
+				918B991F188EAAF000952CC1 /* ITScaleTransition.h */,
+				918B9920188EAAF000952CC1 /* ITScaleTransition.m */,
 				91173AD5188D27AA0012AD9A /* ITSlideTransition.h */,
 				91173AD6188D27AA0012AD9A /* ITSlideTransition.m */,
+				91CF2B93188C4958007510D5 /* ITSwapTransition.h */,
+				91CF2B94188C4958007510D5 /* ITSwapTransition.m */,
+				918B9922188EAB0F00952CC1 /* ITSwipeFadeTransition.h */,
+				918B9923188EAB0F00952CC1 /* ITSwipeFadeTransition.m */,
+				918B9925188EAB2A00952CC1 /* ITSwipeTransition.h */,
+				918B9926188EAB2A00952CC1 /* ITSwipeTransition.m */,
+				918B9928188EAB4500952CC1 /* ITZoomTransition.h */,
+				918B9929188EAB4500952CC1 /* ITZoomTransition.m */,
 			);
 			name = Optional;
 			sourceTree = "<group>";
@@ -340,19 +390,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				918B9927188EAB2A00952CC1 /* ITSwipeTransition.m in Sources */,
+				918B9915188EAA7900952CC1 /* ITCrossTransition.m in Sources */,
+				918B991E188EAAC000952CC1 /* ITPushRotateTransition.m in Sources */,
 				91CF2B98188C5EC2007510D5 /* ITFlipTransition.m in Sources */,
 				91CF2B4F188C2758007510D5 /* main.m in Sources */,
 				91CF2B8A188C3AA7007510D5 /* ITDualTransition.m in Sources */,
+				918B992A188EAB4500952CC1 /* ITZoomTransition.m in Sources */,
 				91173AD4188D27230012AD9A /* ITGhostTransition.m in Sources */,
 				91CF2B7F188C27BC007510D5 /* ITTransition.m in Sources */,
 				91CF2B9B188C6A17007510D5 /* ITFadeTransition.m in Sources */,
 				91CF2B95188C4958007510D5 /* ITSwapTransition.m in Sources */,
 				91CF2B87188C3802007510D5 /* ITTransformTransition.m in Sources */,
 				91173AD1188D0C330012AD9A /* ITCubeTransition.m in Sources */,
+				918B9912188EAA5E00952CC1 /* ITFoldTransition.m in Sources */,
 				91173AD7188D27AA0012AD9A /* ITSlideTransition.m in Sources */,
+				918B991B188EAAB000952CC1 /* ITModernPushTransition.m in Sources */,
+				918B9921188EAAF000952CC1 /* ITScaleTransition.m in Sources */,
 				91CF2B56188C2758007510D5 /* ITAppDelegate.m in Sources */,
 				91CF2B9E188C6C04007510D5 /* ITCarrouselTransition.m in Sources */,
+				918B990F188EAA0700952CC1 /* ITBackFadeTransition.m in Sources */,
 				91CF2B79188C2775007510D5 /* ITTransitionView.m in Sources */,
+				918B9918188EAA9E00952CC1 /* ITGlueTransition.m in Sources */,
+				918B9924188EAB0F00952CC1 /* ITSwipeFadeTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

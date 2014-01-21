@@ -23,7 +23,7 @@
     outFadeAnimation.duration = self.duration;
     
     self.inAnimation = inFadeAnimation;
-//    self.outAnimation = outFadeAnimation;
+    self.outAnimation = outFadeAnimation;
 }
 
 @end

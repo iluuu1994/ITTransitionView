@@ -12,8 +12,8 @@
 @implementation ITSlideTransition
 
 - (void)prepareForUsage {
-    const CGFloat viewWidth = self.sourceRect.size.width;
-    const CGFloat viewHeight = self.sourceRect.size.height;
+    const CGFloat viewWidth = self.transitionViewBounds.size.width;
+    const CGFloat viewHeight = self.transitionViewBounds.size.height;
     const CGFloat scaleFactor = 0.7f;
     
     CATransform3D inTranslationTransform;

@@ -65,46 +65,106 @@
                 <menuItem title="Animate" id="83">
                     <menu key="submenu" title="Animate" id="81">
                         <items>
-                            <menuItem title="Swap" id="78">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="animateToNext:" target="494" id="3ao-Gi-9hA"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Flip" tag="1" id="a8d-MO-Prg">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="animateToNext:" target="494" id="Ryk-7h-lmC"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Fade" tag="2" id="e2p-9h-3dG">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="animateToNext:" target="494" id="f7J-1l-PkF"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Carrousel" tag="3" id="wFp-du-PDV">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="animateToNext:" target="494" id="qQg-pK-Gvl"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Cube" tag="4" id="hoe-DH-euc">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="animateToNext:" target="494" id="Yzr-Qt-lyA"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Ghost" tag="5" id="q9U-Pf-cle">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="animateToNext:" target="494" id="uy8-ul-ynR"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Slide" tag="6" id="QVK-yh-6Vy">
+                            <menuItem title="Back Fade" id="QVK-yh-6Vy">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="animateToNext:" target="494" id="ENK-8Y-3we"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Carrousel" tag="1" id="BIZ-SQ-TMv">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="xhR-JQ-NIP"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Cross" tag="2" id="iim-Ny-VTI">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="Nil-d9-MIB"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Cube" tag="3" id="DSi-wX-h8x">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="scP-I2-ii3"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Fade" tag="4" id="XX2-Gw-iMT">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="pXp-jR-U6T"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Flip" tag="5" id="A3i-I9-Nui">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="BPC-W8-s2C"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Fold" tag="6" id="29Z-hq-muC">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="dI1-l4-ysP"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Ghost" tag="7" id="6PZ-es-sqp">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="24r-Km-d1F"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Glue" tag="8" id="W5U-SS-3QH">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="d1s-S1-9L0"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Modern Push" tag="9" id="Bh2-vG-khZ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="fol-jF-di4"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Push Rotate" tag="10" id="gxY-3c-T4X">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="708-WA-sCD"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Scale" tag="11" id="4FR-37-S0J">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="T0p-Fo-kWC"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Slide" tag="12" id="E1K-qp-vKW">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="eKa-zD-eqT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Swap" tag="13" id="KJV-I7-J7q">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="b3n-sY-byL"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Swipe Fade" tag="14" id="2ml-A6-Jat">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="nEM-NL-BrB"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Swipe" tag="15" id="Xbu-kH-n25">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="ELL-2v-SWJ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" tag="16" id="aPA-A5-XQS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="animateToNext:" target="494" id="xKg-xQ-uC0"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -161,7 +221,7 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="360" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
-            <view key="contentView" wantsLayer="YES" id="372">
+            <view key="contentView" id="372">
                 <rect key="frame" x="0.0" y="0.0" width="360" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>

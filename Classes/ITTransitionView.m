@@ -122,7 +122,7 @@
         _lock = YES;
         
         // Prepare transition/views/layers
-        transition.sourceRect = self.frame;
+        transition.transitionViewBounds = self.bounds;
         viewIn.frame = self.bounds;
         [viewIn layoutSubtreeIfNeeded];
         [viewIn displayIfNeeded];

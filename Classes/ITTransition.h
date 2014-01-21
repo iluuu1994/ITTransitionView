@@ -60,7 +60,7 @@ typedef NS_ENUM(NSUInteger, ITTransitionOrientation) {
 /**
  *  The rect of the transition view
  */
-@property (nonatomic, assign) NSRect sourceRect;
+@property (nonatomic, assign) NSRect transitionViewBounds;
 
 /**
  *  The duration of the transition
