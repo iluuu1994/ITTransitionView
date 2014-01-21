@@ -6,7 +6,7 @@ What is this?
 
 `ITTransitionView` is a port of [ADTransitionController](https://github.com/applidium/ADTransitionController) from iOS to Mac OS X.
 
-[Demo](./demo.mov)
+[Demo](./demo.mp4)
 ==================
 
 
