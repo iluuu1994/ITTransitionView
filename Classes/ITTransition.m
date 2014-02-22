@@ -11,6 +11,16 @@
 
 @implementation ITTransition
 
+#pragma mark - Init
+- (id)init
+{
+    if (self = [super init]) {
+        self.duration = 0.5;
+        self.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    }
+    return self;
+}
+
 #pragma mark - Transition
 - (void)transitionContainerView:(NSView *)containerView
           oldRepresentationView:(NSView *)oldRepresentationView
