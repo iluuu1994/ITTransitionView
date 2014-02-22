@@ -72,6 +72,11 @@ typedef NS_ENUM(NSUInteger, ITTransitionOrientation) {
 @property (nonatomic) NSTimeInterval duration;
 
 /**
+ *  @property timingFunction - The preferred timing function
+ */
+@property CAMediaTimingFunction *timingFunction;
+
+/**
  *  Starts the transition.
  *  This is abstract and should be overriden in subclasses.
  *

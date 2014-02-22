@@ -17,6 +17,7 @@
     ((CABasicAnimation *)animation).fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI * 0.5f, 0.0f, 1.0f, 0.0f)];
     ((CABasicAnimation *)animation).toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
     self.outTransform = CATransform3DRotate(self.outTransform, -M_PI * 0.5f, 0.0f, 1.0f, 0.0f);
+    if (self.timingFunction) animation.timingFunction = self.timingFunction;
     
     self.animation = animation;
     self.duration = self.duration;

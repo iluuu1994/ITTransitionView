@@ -60,6 +60,7 @@
     
     animation = [CAAnimationGroup animation];
     [(CAAnimationGroup *)animation setAnimations:@[carrouselRotation, zTranslationAnimation]];
+    if (self.timingFunction) animation.timingFunction = self.timingFunction;
     
     self.animation = animation;
     self.animation.duration = self.duration;

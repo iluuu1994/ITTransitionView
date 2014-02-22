@@ -23,6 +23,7 @@
     CAAnimationGroup * inAnimation = [CAAnimationGroup animation];
     [inAnimation setAnimations:@[inFadeAnimation, inScaleAnimation]];
     inAnimation.duration = self.duration;
+    if (self.timingFunction) inAnimation.timingFunction = self.timingFunction;
     
     CABasicAnimation * outFadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     outFadeAnimation.fromValue = @1.0f;
@@ -35,6 +36,7 @@
     CAAnimationGroup * outAnimation = [CAAnimationGroup animation];
     [outAnimation setAnimations:@[outFadeAnimation, outScaleAnimation]];
     outAnimation.duration = self.duration;
+    if (self.timingFunction) outAnimation.timingFunction = self.timingFunction;
     
     self.inAnimation = inAnimation;
     self.outAnimation = outAnimation;

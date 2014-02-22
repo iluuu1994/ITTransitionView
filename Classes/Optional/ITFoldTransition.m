@@ -96,10 +96,12 @@
     CAAnimationGroup * inAnimation = [CAAnimationGroup animation];
     [inAnimation setAnimations:@[inOpacityAnimation, inRotationAnimation, inAnchorPointAnimation]];
     inAnimation.duration = self.duration;
+    if (self.timingFunction) inAnimation.timingFunction = self.timingFunction;
     
     CAAnimationGroup * outAnimation = [CAAnimationGroup animation];
     [outAnimation setAnimations:@[outOpacityAnimation, outRotationAnimation, outAnchorPointAnimation]];
     outAnimation.duration = self.duration;
+    if (self.timingFunction) outAnimation.timingFunction = self.timingFunction;
     
     self.inAnimation = inAnimation;
     self.outAnimation = outAnimation;

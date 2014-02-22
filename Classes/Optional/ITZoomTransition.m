@@ -25,11 +25,13 @@ CGPoint ITRectCenter(CGRect rect) {
     zoomAnimation.fromValue = [NSValue valueWithCATransform3D:transform];
     zoomAnimation.toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
     zoomAnimation.duration = self.duration;
+    if (self.timingFunction) zoomAnimation.timingFunction = self.timingFunction;
     
     CABasicAnimation * outAnimation = [CABasicAnimation animationWithKeyPath:@"zPosition"];
     outAnimation.fromValue = @-0.001;
     outAnimation.toValue = @-0.001;
     outAnimation.duration = self.duration;
+    if (self.timingFunction) outAnimation.timingFunction = self.timingFunction;
     
     self.inAnimation = zoomAnimation;
     self.outAnimation = outAnimation;

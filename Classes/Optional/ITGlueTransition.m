@@ -70,6 +70,7 @@
     CAAnimationGroup * inAnimation = [CAAnimationGroup animation];
     inAnimation.animations = @[inSwipeAnimation, inPositionAnimation];
     inAnimation.duration = self.duration;
+    if (self.timingFunction) inAnimation.timingFunction = self.timingFunction;
     
     CATransform3D endTranslation = CATransform3DTranslate(startTranslation, 0, 0, -viewWidth * 0.7f);
     
@@ -87,6 +88,7 @@
     CAAnimationGroup * outAnimation = [CAAnimationGroup animation];
     [outAnimation setAnimations:@[outOpacityKeyFrameAnimation, outTransformKeyFrameAnimation, outAnchorPointAnimation]];
     outAnimation.duration = self.duration;
+    if (self.timingFunction) outAnimation.timingFunction = self.timingFunction;
     
     self.inAnimation = inAnimation;
     self.outAnimation = outAnimation;

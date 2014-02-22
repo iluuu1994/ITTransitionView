@@ -52,6 +52,8 @@
     }
     inSwipeAnimation.duration = self.duration;
     outSwipeAnimation.duration = self.duration;
+    if (self.timingFunction) inSwipeAnimation.timingFunction = self.timingFunction;
+    if (self.timingFunction) outSwipeAnimation.timingFunction = self.timingFunction;
     
     CABasicAnimation * inPositionAnimation = [CABasicAnimation animationWithKeyPath:@"zPosition"];
     inPositionAnimation.fromValue = @-0.001;

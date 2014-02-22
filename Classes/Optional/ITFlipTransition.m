@@ -67,10 +67,12 @@
     CAAnimationGroup * inAnimation = [CAAnimationGroup animation];
     [inAnimation setAnimations:@[inFlipAnimation, zTranslationAnimation]];
     inAnimation.duration = self.duration;
+    if (self.timingFunction) inAnimation.timingFunction = self.timingFunction;
     
     CAAnimationGroup * outAnimation = [CAAnimationGroup animation];
     [outAnimation setAnimations:@[outFlipAnimation, zTranslationAnimation]];
     outAnimation.duration = self.duration;
+    if (self.timingFunction) outAnimation.timingFunction = self.timingFunction;
     
     self.inAnimation = inAnimation;
     self.outAnimation = outAnimation;

@@ -69,6 +69,7 @@
     CAAnimationGroup * inAnimation = [CAAnimationGroup animation];
     inAnimation.animations = @[inKeyFrameTransformAnimation, inKeyFrameOpacityAnimation, inZPositionAnimation];
     inAnimation.duration = self.duration;
+    if (self.timingFunction) inAnimation.timingFunction = self.timingFunction;
     
     CATransform3D outScaleDownTransform = CATransform3DScale(CATransform3DIdentity, scaleFactor, scaleFactor, 1.0f);
     CATransform3D outTranslationScaleTransform = CATransform3DScale(outTranslationTransform, scaleFactor, scaleFactor, 1.0f  );
@@ -92,6 +93,7 @@
     CAAnimationGroup * outAnimation = [CAAnimationGroup animation];
     outAnimation.animations = @[outKeyFrameTransformAnimation, outKeyFrameOpacityAnimation, outZPositionAnimation];
     outAnimation.duration = self.duration;
+    if (self.timingFunction) outAnimation.timingFunction = self.timingFunction;
     
     self.inAnimation = inAnimation;
     self.outAnimation = outAnimation;

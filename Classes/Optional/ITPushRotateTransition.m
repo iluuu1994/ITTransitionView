@@ -69,6 +69,7 @@
     CAAnimationGroup * inAnimation = [CAAnimationGroup animation];
     inAnimation.animations = @[inSwipeAnimation, inPositionAnimation];
     inAnimation.duration = self.duration;
+    if (self.timingFunction) inAnimation.timingFunction = self.timingFunction;
     
     CABasicAnimation * outAnchorPointAnimation = [CABasicAnimation animationWithKeyPath:@"anchorPoint"];
     outAnchorPointAnimation.fromValue = [NSValue valueWithPoint:anchorPoint];
@@ -84,8 +85,8 @@
     
     CAAnimationGroup * outAnimation = [CAAnimationGroup animation];
     [outAnimation setAnimations:@[outOpacityAnimation, outRotationAnimation, outAnchorPointAnimation]];
-    
     outAnimation.duration = self.duration;
+    if (self.timingFunction) outAnimation.timingFunction = self.timingFunction;
     
     self.inAnimation = inAnimation;
     self.outAnimation = outAnimation;

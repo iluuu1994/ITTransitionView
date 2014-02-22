@@ -44,6 +44,7 @@
             break;
     }
     inSwipeAnimation.duration = self.duration;
+    if (self.timingFunction) inSwipeAnimation.timingFunction = self.timingFunction;
     
     CABasicAnimation * outOpacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     outOpacityAnimation.fromValue = @1.0f;
@@ -57,6 +58,7 @@
     CAAnimationGroup * outAnimation = [CAAnimationGroup animation];
     [outAnimation setAnimations:@[outOpacityAnimation, outPositionAnimation]];
     outAnimation.duration = self.duration;
+    if (self.timingFunction) outAnimation.timingFunction = self.timingFunction;
     
     self.inAnimation = inSwipeAnimation;
     self.outAnimation = outAnimation;

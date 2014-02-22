@@ -190,6 +190,7 @@
 
 - (void)_prepareForTransition {
     [_layerBackedContainer setHidden:NO];
+//    [_oldRepresentationView setHidden:YES];
     
     [self _reloadAnchorPoints];
     
