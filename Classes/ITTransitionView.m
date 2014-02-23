@@ -11,6 +11,7 @@
 
 #pragma mark - Private
 @interface ITTransitionView () {
+    CALayer *_rootLayer;
     NSView *_layerBackedContainer;
     NSView *_containerView;
     NSView *_oldRepresentationView;
@@ -76,6 +77,8 @@
     _newRepresentationView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     
     // Make layer backed
+    _rootLayer = [CALayer layer];
+    _layerBackedContainer.layer = _rootLayer;
     _layerBackedContainer.wantsLayer = YES;
     _layerBackedContainer.autoresizesSubviews = YES;
     
@@ -92,7 +95,7 @@
     float zDistance = 1000.f;
     CATransform3D sublayerTransform = CATransform3DIdentity;
     sublayerTransform.m34 = 1.0 / -zDistance;
-    _layerBackedContainer.layer.sublayerTransform = sublayerTransform;
+    _rootLayer.sublayerTransform = sublayerTransform;
 
     [self _reloadAnchorPoints];
 
@@ -175,8 +178,8 @@
         .size = self.bounds.size
     };
     
-    _layerBackedContainer.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
-    _layerBackedContainer.layer.frame = frame;
+    _rootLayer.anchorPoint = CGPointMake(0.5f, 0.5f);
+    _rootLayer.frame = frame;
     
     _containerView.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
     _containerView.layer.frame = frame;
@@ -189,22 +192,31 @@
 }
 
 - (void)_prepareForTransition {
-    [_layerBackedContainer setHidden:NO];
-//    [_oldRepresentationView setHidden:YES];
-    
-    [self _reloadAnchorPoints];
-    
-    _containerView.layer.transform = CATransform3DIdentity;
-    _newRepresentationView.layer.transform = CATransform3DIdentity;
-    _oldRepresentationView.layer.transform = CATransform3DIdentity;
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    {
+        [_layerBackedContainer setHidden:NO];
+        
+        [self _reloadAnchorPoints];
+        
+        _containerView.layer.transform = CATransform3DIdentity;
+        _newRepresentationView.layer.transform = CATransform3DIdentity;
+        _oldRepresentationView.layer.transform = CATransform3DIdentity;
+    }
+    [CATransaction commit];
 }
 
 - (void)_cleanupAfterTransition {
-    [_layerBackedContainer setHidden:YES];
-    _oldRepresentationView.layer.contents = nil;
-    _newRepresentationView.layer.contents = nil;
-    
-    _containerView.layer.sublayerTransform = CATransform3DIdentity;
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    {
+        [_layerBackedContainer setHidden:YES];
+        _oldRepresentationView.layer.contents = nil;
+        _newRepresentationView.layer.contents = nil;
+        
+        _containerView.layer.sublayerTransform = CATransform3DIdentity;
+    }
+    [CATransaction commit];
 }
 
 - (NSImage *)_cacheContentsOfView:(NSView *)view {
