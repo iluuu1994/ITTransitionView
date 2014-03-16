@@ -64,6 +64,8 @@
 }
 
 - (void)_commonInit {
+    _cachesContents = YES;
+    
     // Init the layers
     _layerBackedContainer = [[NSView alloc] initWithFrame:self.bounds];
     _containerView = [[IT3DView alloc] initWithFrame:self.bounds];
@@ -88,10 +90,16 @@
     [_containerView addSubview:_newRepresentationView];
     [self addSubview:_layerBackedContainer];
     
-    // 3d setup
+    // No Clipping (for shadows)
+    _rootLayer.masksToBounds = NO;
+    _layerBackedContainer.layer.masksToBounds = NO;
+    _oldRepresentationView.layer.masksToBounds = NO;
+    _newRepresentationView.layer.masksToBounds = NO;
+    
     _oldRepresentationView.layer.doubleSided = NO;
     _newRepresentationView.layer.doubleSided = NO;
     
+    // 3d setup
     float zDistance = 1000.f;
     CATransform3D sublayerTransform = CATransform3DIdentity;
     sublayerTransform.m34 = 1.0 / -zDistance;
@@ -101,6 +109,10 @@
 
     // Finally, we hide the container
     [_layerBackedContainer setHidden:YES];
+}
+
+- (void)awakeFromNib {
+    self.layer.masksToBounds = NO; // Disable mask if the view is layer-backed
 }
 
 
@@ -130,11 +142,17 @@
         transition.transitionViewBounds = self.bounds;
         viewIn.frame = self.bounds;
         
-        _oldRepresentationView.layer.contents = [self _cacheContentsOfView:viewOut];
-        _newRepresentationView.layer.contents = [self _cacheContentsOfView:viewIn];
+        [viewOut removeFromSuperview];
         
         [self _prepareForTransition];
-        [viewOut removeFromSuperview];
+        
+        if (self.cachesContents) {
+            _oldRepresentationView.layer.contents = [self _cacheContentsOfView:viewOut];
+            _newRepresentationView.layer.contents = [self _cacheContentsOfView:viewIn];
+        } else {
+            [_newRepresentationView addSubview:viewIn];
+            [_oldRepresentationView addSubview:viewOut];
+        }
         
         // Start the animation
         [CATransaction begin];
@@ -142,10 +160,20 @@
             // Hide the container
             CATransaction.completionBlock = ^{
                 if (viewIn == _contentView) {
-                    [self _addAutoresizingSubview:viewIn];
-                    [self display];
-                    [self _cleanupAfterTransition];
-                    
+                    NSDisableScreenUpdates();
+                    {
+                        if (!self.cachesContents) {
+                            [viewIn removeFromSuperview];
+                            [viewOut removeFromSuperview];
+                        }
+                        
+                        [self _addAutoresizingSubview:viewIn];
+                        [self _cleanupAfterTransition];
+                        
+                        [self display];
+                    }
+                    NSEnableScreenUpdates();
+                        
                     _lock = NO;
                 }
             };

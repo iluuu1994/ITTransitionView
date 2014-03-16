@@ -20,6 +20,12 @@
  */
 @interface ITTransitionView : NSView
 
+/**
+ *  @property cachesContents - Defines wether the contents of the views should be cached into other views,
+                               or if the original views should be used. Default's YES.
+ */
+@property BOOL cachesContents;
+
 
 /**
  *  @property content - The view currently displayed in the transition view.
