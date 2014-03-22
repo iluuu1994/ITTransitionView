@@ -117,12 +117,12 @@
 
 
 #pragma mark - Transition
-- (void)transitionToView:(NSView *)view
+- (BOOL)transitionToView:(NSView *)view
           withTransition:(ITTransition *)transition
 {
-    [self _transitionfromView:_contentView
-                       toView:view
-               withTransition:transition];
+    return [self _transitionfromView:_contentView
+                              toView:view
+                      withTransition:transition];
 }
 
 - (BOOL)_transitionfromView:(NSView *)viewOut
@@ -173,6 +173,8 @@
                         [self display];
                     }
                     NSEnableScreenUpdates();
+                    
+                    [self.window makeFirstResponder:_contentView];
                         
                     _lock = NO;
                 }
@@ -191,8 +193,9 @@
     // or `nil` passed for the transition.
     else
     {
-        [self _addAutoresizingSubview:viewIn];
+        [self _addAutoresizingSubview:_contentView];
         [viewOut removeFromSuperview];
+        [self.window makeFirstResponder:_contentView];
     }
     
     return YES;
