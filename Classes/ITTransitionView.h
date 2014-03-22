@@ -46,7 +46,7 @@
  *  @param view       - The view to replace the current content view with.
  *  @param transition - The Transition used to replace the content view.
  */
-- (void)transitionToView:(NSView *)view
+- (BOOL)transitionToView:(NSView *)view
           withTransition:(ITTransition *)transition;
 
 @end

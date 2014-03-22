@@ -125,11 +125,11 @@
                withTransition:transition];
 }
 
-- (void)_transitionfromView:(NSView *)viewOut
+- (BOOL)_transitionfromView:(NSView *)viewOut
                      toView:(NSView *)viewIn
              withTransition:(ITTransition *)transition
 {
-    if (_lock || viewOut == viewIn) return;
+    if (_lock || viewOut == viewIn) return NO;
     
     _contentView = viewIn;
     
@@ -194,6 +194,8 @@
         [self _addAutoresizingSubview:viewIn];
         [viewOut removeFromSuperview];
     }
+    
+    return YES;
 }
 
 
