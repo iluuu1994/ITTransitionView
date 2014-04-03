@@ -12,6 +12,28 @@
 #import "ITTransformTransition.h"
 #import "ITDualTransition.h"
 
+// -----------------------------------
+#pragma mark - Preprocessor
+// -----------------------------------
+
+@class ITTransitionView;
+
+
+// ----------------------------------------------------------------------------------------
+#pragma mark - Delegate
+// ----------------------------------------------------------------------------------------
+
+@protocol ITTransitionViewDelegate <NSObject>
+@optional
+- (void)transitionViewWillStartTransitioning:(ITTransitionView *)transitionView;
+- (void)transitionViewDidStopTransitioning:(ITTransitionView *)transitionView;
+@end
+
+
+// ----------------------------------------------------------------------------------------
+#pragma mark - Interface
+// ----------------------------------------------------------------------------------------
+
 /**
  *  @class ITTransitionView
  *
@@ -19,6 +41,11 @@
  *  Core Animation is used on the fly, but the views don't actually have to be layer-backed.
  */
 @interface ITTransitionView : NSView
+
+/**
+ *  @property delegate - The delegate will receive callbacks from the transition view
+ */
+@property (nonatomic, weak) id<ITTransitionViewDelegate> delegate;
 
 /**
  *  @property cachesContents - Defines wether the contents of the views should be cached into other views,

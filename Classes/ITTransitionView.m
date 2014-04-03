@@ -131,6 +131,8 @@
 {
     if (_lock || viewOut == viewIn) return NO;
     
+    [self _notifyDelegateWithSelector:@selector(transitionViewWillStartTransitioning:)];
+    
     _contentView = viewIn;
     
     if (transition && viewOut)
@@ -177,6 +179,8 @@
                     [self.window makeFirstResponder:_contentView];
                         
                     _lock = NO;
+                    
+                    [self _notifyDelegateWithSelector:@selector(transitionViewDidStopTransitioning:)];
                 }
             };
             
@@ -202,7 +206,22 @@
 }
 
 
+// -----------------------------------
 #pragma mark - Helpers
+// -----------------------------------
+
+- (void)_notifyDelegateWithSelector:(SEL)sel {
+    if ([self.delegate respondsToSelector:sel]) {
+        NSInvocation *invoc = [NSInvocation invocationWithMethodSignature:[(id)self.delegate methodSignatureForSelector:sel]];
+        invoc.target = self.delegate;
+        invoc.selector = sel;
+        [invoc setArgument:(void *)&self atIndex:2];
+        
+        [invoc invoke];
+    }
+}
+
+
 - (void)_reloadAnchorPoints {
     // Setting anchor point
     CGRect frame = (CGRect){
