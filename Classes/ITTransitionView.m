@@ -200,6 +200,8 @@
         [self _addAutoresizingSubview:_contentView];
         [viewOut removeFromSuperview];
         [self.window makeFirstResponder:_contentView];
+        
+        [self _notifyDelegateWithSelector:@selector(transitionViewDidStopTransitioning:)];
     }
     
     return YES;

@@ -45,7 +45,7 @@
 /**
  *  @property delegate - The delegate will receive callbacks from the transition view
  */
-@property (nonatomic, weak) id<ITTransitionViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<ITTransitionViewDelegate> delegate;
 
 /**
  *  @property cachesContents - Defines wether the contents of the views should be cached into other views,
