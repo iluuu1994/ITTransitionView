@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Ilija Tovilo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 // Forward declaration
 @class ITTransition;
