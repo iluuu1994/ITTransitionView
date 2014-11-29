@@ -292,4 +292,9 @@
     [self addSubview:aView];
 }
 
+- (NSView *)hitTest:(NSPoint)aPoint {
+    if (_lock) return nil;
+    return [super hitTest:aPoint];
+}
+
 @end
