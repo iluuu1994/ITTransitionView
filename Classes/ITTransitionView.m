@@ -109,6 +109,23 @@
 
     // Finally, we hide the container
     [_layerBackedContainer setHidden:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_sizeChanged)
+                                                 name:NSViewFrameDidChangeNotification
+                                               object:self];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)_sizeChanged {
+    // TODO: Check why this is necessary
+    self.layer.masksToBounds = NO;
+    _layerBackedContainer.layer.masksToBounds = NO;
+    _oldRepresentationView.layer.masksToBounds = NO;
+    _newRepresentationView.layer.masksToBounds = NO;
 }
 
 - (void)awakeFromNib {
